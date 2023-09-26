@@ -9,6 +9,11 @@ extern void Run();
  */
 extern unsigned char ftouch(void);
 
+/** @brief внешние функции,
+ каждая из которых выводит цифру от 1 до 15 или «пробел» в текущую зону экрана.
+ При выполнении любой из функций «fpicture_x» номер текущей зоны экрана 
+ автоматически инкрементируется 
+ */
 extern void fpicture_1(void);
 extern void fpicture_2(void);
 extern void fpicture_3(void);
