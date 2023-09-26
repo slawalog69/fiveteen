@@ -1,0 +1,7 @@
+<map id="getRandom" name="getRandom">
+<area shape="rect" id="Node000001" title="генератор случайной последовательности кнопок" alt="" coords="245,5,332,32"/>
+<area shape="rect" id="Node000002" href="$d7/d46/a00002.html#a0d662362385098066d2c9bbbdc2231c6" title="сброс и перемешивание" alt="" coords="98,5,197,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,21,197,21,197,16,229,16"/>
+<area shape="rect" id="Node000003" href="$d7/d46/a00002.html#aa3eca255b6be227d7d901cc2a72017a5" title="цикл игры" alt="" coords="5,5,50,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,21,50,21,50,16,82,16"/>
+</map>

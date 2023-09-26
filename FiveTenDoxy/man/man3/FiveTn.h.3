@@ -1,0 +1,130 @@
+.TH "FiveTn.h" 3 "tstform" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FiveTn.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRun\fP ()"
+.br
+.RI "цикл игры "
+.ti -1c
+.RI "unsigned char \fBftouch\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_1\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_2\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_4\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_5\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_6\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_7\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_8\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_9\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_10\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_11\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_12\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_13\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_14\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_15\fP (void)"
+.br
+.ti -1c
+.RI "void \fBfpicture_spase\fP (void)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void fpicture_1 (void)\fC [extern]\fP"
+
+.SS "void fpicture_10 (void)\fC [extern]\fP"
+
+.SS "void fpicture_11 (void)\fC [extern]\fP"
+
+.SS "void fpicture_12 (void)\fC [extern]\fP"
+
+.SS "void fpicture_13 (void)\fC [extern]\fP"
+
+.SS "void fpicture_14 (void)\fC [extern]\fP"
+
+.SS "void fpicture_15 (void)\fC [extern]\fP"
+
+.SS "void fpicture_2 (void)\fC [extern]\fP"
+
+.SS "void fpicture_3 (void)\fC [extern]\fP"
+
+.SS "void fpicture_4 (void)\fC [extern]\fP"
+
+.SS "void fpicture_5 (void)\fC [extern]\fP"
+
+.SS "void fpicture_6 (void)\fC [extern]\fP"
+
+.SS "void fpicture_7 (void)\fC [extern]\fP"
+
+.SS "void fpicture_8 (void)\fC [extern]\fP"
+
+.SS "void fpicture_9 (void)\fC [extern]\fP"
+
+.SS "void fpicture_spase (void)\fC [extern]\fP"
+
+.SS "unsigned char ftouch (void)\fC [extern]\fP"
+
+.SS "void Run ()\fC [extern]\fP"
+
+.PP
+цикл игры 
+.PP
+Definition at line \fB131\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+131            {
+132     FiveTn_Reset();
+133     while (1){
+134         int tch = ftouch();
+135         if (tch == avlbl_touch[4])
+136             FiveTn_Reset();
+137 
+138         else if (IsAvailable(tch)){
+139             swapButt(tch\-1); 
+140             showFiveTnPole();
+141             find_avlbl_touch();
+142         }
+143     }
+144 
+145 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tstform from the source code\&.

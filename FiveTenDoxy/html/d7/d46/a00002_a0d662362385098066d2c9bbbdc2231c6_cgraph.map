@@ -1,0 +1,9 @@
+<map id="FiveTn_Reset" name="FiveTn_Reset">
+<area shape="rect" id="Node000001" title="сброс и перемешивание" alt="" coords="5,56,105,83"/>
+<area shape="rect" id="Node000002" href="$d7/d46/a00002.html#aef9f8cf29f3391d07e3a08547b128186" title="определение доступных зон(фишек)" alt="" coords="154,5,266,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,53,151,35,153,40,99,58"/>
+<area shape="rect" id="Node000003" href="$d7/d46/a00002.html#aabd60fc4cad0f3458c33196520d44b2c" title="генератор случайной последовательности кнопок" alt="" coords="166,56,254,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,67,151,67,151,72,105,72"/>
+<area shape="rect" id="Node000004" href="$d7/d46/a00002.html#a669a6c685069cba4e515c520e31422cf" title="отрисовка игры" alt="" coords="153,107,267,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,81,153,99,151,104,97,86"/>
+</map>

@@ -1,0 +1,307 @@
+.TH "fiveteen.c" 3 "tstform" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fiveteen.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'FiveTn\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "union \fBmatrix\fP"
+.br
+.RI "массив значений зон экрана "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBf_pic\fP) (void)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfind_avlbl_touch\fP (void)"
+.br
+.RI "определение доступных зон(фишек) "
+.ti -1c
+.RI "void \fBgetRandom\fP (void)"
+.br
+.RI "генератор случайной последовательности кнопок "
+.ti -1c
+.RI "void \fBshowFiveTnPole\fP (void)"
+.br
+.RI "отрисовка игры 
+.br
+ "
+.ti -1c
+.RI "void \fBFiveTn_Reset\fP (void)"
+.br
+.RI "сброс и перемешивание "
+.ti -1c
+.RI "int \fBIsAvailable\fP (int tch)"
+.br
+.RI "определение возможности движения "
+.ti -1c
+.RI "void \fBswapButt\fP (int tch)"
+.br
+.RI "передвижение фишек "
+.ti -1c
+.RI "void \fBRun\fP ()"
+.br
+.RI "цикл игры "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "union \fBmatrix\fP \fBu\fP"
+.br
+.ti -1c
+.RI "int \fBavlbl_touch\fP [5] = { 0 }"
+.br
+.RI "массив доступных для перемещения фишек "
+.ti -1c
+.RI "\fBf_pic\fP \fBfpicture_x\fP [16]"
+.br
+.RI "массив функций вывода "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void(* f_pic) (void)"
+
+.PP
+Definition at line \fB23\fP of file \fBfiveteen\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void find_avlbl_touch (void)"
+
+.PP
+определение доступных зон(фишек) 
+.PP
+Definition at line \fB80\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+80                             { 
+81     memset(avlbl_touch, 0, sizeof(avlbl_touch));
+82 printf("avalable : ");
+83     for (int r = 0; r < 4; ++r) {
+84         for (int c = 0; c < 4; ++c) {
+85             if (u\&.row_col[r][c] == 16) {
+86                 int i = 0; 
+87                 if (r > 0) {
+88                     avlbl_touch[i] = (r\-1) * 4 + c+1;
+89                     i++;
+90                 }
+91                 if(r < 3){
+92                     avlbl_touch[i] =  (r + 1)* 4 + c+1;
+93                     i++;
+94                 }
+95                 if (c > 0) {
+96                     avlbl_touch[i] = r * 4  + c;
+97                     i++;
+98                 }
+99                 if(c < 3){
+100                     avlbl_touch[i] = r * 4  + c + 2;
+101                 }
+102 
+103                 avlbl_touch[4] = r * 4  + c + 1; 
+104                 printf("\\n space %d  \\n", avlbl_touch[4]);
+105             }
+106         }
+107     }
+108 
+109 }
+.fi
+
+.SS "void FiveTn_Reset (void)"
+
+.PP
+сброс и перемешивание 
+.PP
+Definition at line \fB57\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+57                         {
+58     getRandom();
+59     showFiveTnPole();
+60     find_avlbl_touch();
+61  
+62 }
+.fi
+
+.SS "void getRandom (void)"
+
+.PP
+генератор случайной последовательности кнопок для параметра генератора используется время системы Win 
+.br
+ в RISC процессорах можно использовать время любого таймера 
+.br
+
+.PP
+Definition at line \fB65\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+65                      {
+66     /* Intializes random number generator */
+69     __int64 t;
+70     srand((unsigned)time(&t));
+71 
+72     for (unsigned i = 0; i < 16; ++i) {
+73         unsigned j = rand() % (i + 1);
+74         u\&.Buttons[i] = u\&.Buttons[j];
+75         u\&.Buttons[j] = i + 1;
+76     }
+77 }
+.fi
+
+.SS "int IsAvailable (int tch)"
+
+.PP
+определение возможности движения 
+.PP
+Definition at line \fB112\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+112                          {
+113     for (int i = 0; i < 4; i++){
+114         if (tch == avlbl_touch[i]) return avlbl_touch[i];
+115     }
+116     return 0;
+117 }
+.fi
+
+.SS "void Run ()"
+
+.PP
+цикл игры 
+.PP
+Definition at line \fB131\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+131            {
+132     FiveTn_Reset();
+133     while (1){
+134         int tch = ftouch();
+135         if (tch == avlbl_touch[4])
+136             FiveTn_Reset();
+137 
+138         else if (IsAvailable(tch)){
+139             swapButt(tch\-1); 
+140             showFiveTnPole();
+141             find_avlbl_touch();
+142         }
+143     }
+144 
+145 }
+.fi
+
+.SS "void showFiveTnPole (void)"
+
+.PP
+отрисовка игры 
+.br
+ 
+.PP
+Definition at line \fB48\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+48                           {
+49     for (int r = 0; r < 16; r++) {
+50         int t = u\&.Buttons[r] \- 1; 
+51         fpicture_x[t]();
+52     }
+53 
+54 }
+.fi
+
+.SS "void swapButt (int tch)"
+
+.PP
+передвижение фишек 
+.PP
+Definition at line \fB121\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+121                        {
+122     int posSpce = avlbl_touch[4];
+123     int bckUp = u\&.Buttons[tch];
+124     u\&.Buttons[tch] = u\&.Buttons[posSpce \- 1];
+125     u\&.Buttons[posSpce \- 1] = bckUp;
+126 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "int avlbl_touch[5] = { 0 }"
+
+.PP
+массив доступных для перемещения фишек 
+.PP
+Definition at line \fB21\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+21 { 0 };
+.fi
+
+.SS "\fBf_pic\fP fpicture_x[16]"
+\fBInitial value:\fP.PP
+.nf
+=
+{
+fpicture_1,
+fpicture_2,
+fpicture_3,
+fpicture_4,
+fpicture_5,
+fpicture_6,
+fpicture_7,
+fpicture_8,
+fpicture_9,
+fpicture_10,
+fpicture_11,
+fpicture_12,
+fpicture_13,
+fpicture_14,
+fpicture_15,
+fpicture_spase
+}
+.fi
+
+.PP
+массив функций вывода 
+.PP
+Definition at line \fB26\fP of file \fBfiveteen\&.c\fP\&..PP
+.nf
+27 {
+28 fpicture_1,
+29 fpicture_2,
+30 fpicture_3,
+31 fpicture_4,
+32 fpicture_5,
+33 fpicture_6,
+34 fpicture_7,
+35 fpicture_8,
+36 fpicture_9,
+37 fpicture_10,
+38 fpicture_11,
+39 fpicture_12,
+40 fpicture_13,
+41 fpicture_14,
+42 fpicture_15,
+43 fpicture_spase
+44 };
+.fi
+
+.SS "union \fBmatrix\fP u"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tstform from the source code\&.

@@ -1,0 +1,19 @@
+<map id="Run" name="Run">
+<area shape="rect" id="Node000001" title="цикл игры" alt="" coords="5,132,50,159"/>
+<area shape="rect" id="Node000002" href="$d7/d46/a00002.html#aef9f8cf29f3391d07e3a08547b128186" title="определение доступных зон(фишек)" alt="" coords="246,5,358,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="32,130,54,86,73,61,96,42,128,27,163,17,230,11,230,16,164,22,130,32,99,46,77,65,59,88,36,133"/>
+<area shape="rect" id="Node000003" href="$d7/d46/a00002.html#a0d662362385098066d2c9bbbdc2231c6" title="сброс и перемешивание" alt="" coords="98,56,197,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="49,129,111,89,114,93,52,134"/>
+<area shape="rect" id="Node000005" href="$d7/d46/a00002.html#a669a6c685069cba4e515c520e31422cf" title="отрисовка игры" alt="" coords="245,107,359,133"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="50,141,229,124,230,129,50,146"/>
+<area shape="rect" id="Node000006" href="$dd/dad/a00005.html#aef1c33bbabe502d02afa176c63b4e055" title=" " alt="" coords="119,157,176,184"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="51,147,105,159,104,164,50,153"/>
+<area shape="rect" id="Node000007" href="$d7/d46/a00002.html#aa115421bea9b4eeee80f9b2d45e96517" title="определение возможности движения" alt="" coords="106,208,189,235"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="47,157,99,194,107,198,104,203,96,198,44,161"/>
+<area shape="rect" id="Node000008" href="$d7/d46/a00002.html#a2b007319b61cae22e5a4e3b4756bb929" title="передвижение фишек" alt="" coords="110,259,185,285"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="38,158,62,200,79,223,99,245,103,248,100,252,96,249,75,227,57,202,33,160"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="190,53,244,35,245,40,191,58"/>
+<area shape="rect" id="Node000004" href="$d7/d46/a00002.html#aabd60fc4cad0f3458c33196520d44b2c" title="генератор случайной последовательности кнопок" alt="" coords="259,56,346,83"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="198,67,243,67,243,72,198,72"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="191,81,245,99,244,104,190,86"/>
+</map>

@@ -1,0 +1,414 @@
+\doxysection{Файл fiveteen.\+c}
+\hypertarget{a00002}{}\label{a00002}\index{fiveteen.c@{fiveteen.c}}
+{\ttfamily \#include "{}Five\+Tn.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Структуры данных}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{a00014}{matrix}}
+\begin{DoxyCompactList}\small\item\em массив значений зон экрана \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00002_a84fa175f487812e47cfabd01a144e09f}{f\+\_\+pic}}) (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00002_aef9f8cf29f3391d07e3a08547b128186}{find\+\_\+avlbl\+\_\+touch}} (void)
+\begin{DoxyCompactList}\small\item\em определение доступных зон(фишек) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_aabd60fc4cad0f3458c33196520d44b2c}{get\+Random}} (void)
+\begin{DoxyCompactList}\small\item\em генератор случайной последовательности кнопок \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a669a6c685069cba4e515c520e31422cf}{show\+Five\+Tn\+Pole}} (void)
+\begin{DoxyCompactList}\small\item\em отрисовка игры ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a0d662362385098066d2c9bbbdc2231c6}{Five\+Tn\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em сброс и перемешивание \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{a00002_aa115421bea9b4eeee80f9b2d45e96517}{Is\+Available}} (int tch)
+\begin{DoxyCompactList}\small\item\em определение возможности движения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a2b007319b61cae22e5a4e3b4756bb929}{swap\+Butt}} (int tch)
+\begin{DoxyCompactList}\small\item\em передвижение фишек \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_aa3eca255b6be227d7d901cc2a72017a5}{Run}} ()
+\begin{DoxyCompactList}\small\item\em цикл игры \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{a00014}{matrix}} \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}
+\item 
+int \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\+\_\+touch}} \mbox{[}5\mbox{]} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em массив доступных для перемещения фишек \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00002_a84fa175f487812e47cfabd01a144e09f}{f\+\_\+pic}} \mbox{\hyperlink{a00002_a47f165bb804329afae36c43efc0414d9}{fpicture\+\_\+x}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em массив функций вывода \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Типы}
+\Hypertarget{a00002_a84fa175f487812e47cfabd01a144e09f}\label{a00002_a84fa175f487812e47cfabd01a144e09f} 
+\index{fiveteen.c@{fiveteen.c}!f\_pic@{f\_pic}}
+\index{f\_pic@{f\_pic}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{f\_pic}{f\_pic}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} f\+\_\+pic) (void)}
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00023}{23}}
+
+
+
+\doxysubsection{Функции}
+\Hypertarget{a00002_aef9f8cf29f3391d07e3a08547b128186}\label{a00002_aef9f8cf29f3391d07e3a08547b128186} 
+\index{fiveteen.c@{fiveteen.c}!find\_avlbl\_touch@{find\_avlbl\_touch}}
+\index{find\_avlbl\_touch@{find\_avlbl\_touch}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{find\_avlbl\_touch()}{find\_avlbl\_touch()}}
+{\footnotesize\ttfamily void find\+\_\+avlbl\+\_\+touch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+определение доступных зон(фишек) 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00080}{80}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{00081\ \ \ \ \ memset(\mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}},\ 0,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}));}
+\DoxyCodeLine{00082\ printf(\textcolor{stringliteral}{"{}avalable\ :\ "{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ r\ =\ 0;\ r\ <\ 4;\ ++r)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ 4;\ ++c)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_a47eab32264143c7449694211f4e8ec26}{row\_col}}[r][c]\ ==\ 16)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ >\ 0)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i]\ =\ (r-\/1)\ *\ 4\ +\ c+1;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r\ <\ 3)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i]\ =\ \ (r\ +\ 1)*\ 4\ +\ c+1;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ >\ 0)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i]\ =\ r\ *\ 4\ \ +\ c;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ <\ 3)\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i]\ =\ r\ *\ 4\ \ +\ c\ +\ 2;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[4]\ =\ r\ *\ 4\ \ +\ c\ +\ 1;\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\ space\ \%d\ \ \(\backslash\)n"{}},\ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[4]);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d7/d46/a00002_aef9f8cf29f3391d07e3a08547b128186_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_a0d662362385098066d2c9bbbdc2231c6}\label{a00002_a0d662362385098066d2c9bbbdc2231c6} 
+\index{fiveteen.c@{fiveteen.c}!FiveTn\_Reset@{FiveTn\_Reset}}
+\index{FiveTn\_Reset@{FiveTn\_Reset}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{FiveTn\_Reset()}{FiveTn\_Reset()}}
+{\footnotesize\ttfamily void Five\+Tn\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+сброс и перемешивание 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00057}{57}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{a00002_aabd60fc4cad0f3458c33196520d44b2c}{getRandom}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{a00002_a669a6c685069cba4e515c520e31422cf}{showFiveTnPole}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a00002_aef9f8cf29f3391d07e3a08547b128186}{find\_avlbl\_touch}}();}
+\DoxyCodeLine{00061\ \ }
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{d7/d46/a00002_a0d662362385098066d2c9bbbdc2231c6_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d7/d46/a00002_a0d662362385098066d2c9bbbdc2231c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_aabd60fc4cad0f3458c33196520d44b2c}\label{a00002_aabd60fc4cad0f3458c33196520d44b2c} 
+\index{fiveteen.c@{fiveteen.c}!getRandom@{getRandom}}
+\index{getRandom@{getRandom}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{getRandom()}{getRandom()}}
+{\footnotesize\ttfamily void get\+Random (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+генератор случайной последовательности кнопок 
+
+для параметра генератора используется время системы Win ~\newline
+ в RISC процессорах можно использовать время любого таймера ~\newline
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00065}{65}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{/*\ Intializes\ random\ number\ generator\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ \_\_int64\ t;}
+\DoxyCodeLine{00070\ \ \ \ \ srand((\textcolor{keywordtype}{unsigned})time(\&t));}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ 16;\ ++i)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ j\ =\ rand()\ \%\ (i\ +\ 1);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[i]\ =\ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[j];}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[j]\ =\ i\ +\ 1;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{d7/d46/a00002_aabd60fc4cad0f3458c33196520d44b2c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_aa115421bea9b4eeee80f9b2d45e96517}\label{a00002_aa115421bea9b4eeee80f9b2d45e96517} 
+\index{fiveteen.c@{fiveteen.c}!IsAvailable@{IsAvailable}}
+\index{IsAvailable@{IsAvailable}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{IsAvailable()}{IsAvailable()}}
+{\footnotesize\ttfamily int Is\+Available (\begin{DoxyParamCaption}\item[{int}]{tch }\end{DoxyParamCaption})}
+
+
+
+определение возможности движения 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00112}{112}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tch\ ==\ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i])\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[i];}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{d7/d46/a00002_aa115421bea9b4eeee80f9b2d45e96517_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_aa3eca255b6be227d7d901cc2a72017a5}\label{a00002_aa3eca255b6be227d7d901cc2a72017a5} 
+\index{fiveteen.c@{fiveteen.c}!Run@{Run}}
+\index{Run@{Run}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+цикл игры 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00131}{131}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{a00002_a0d662362385098066d2c9bbbdc2231c6}{FiveTn\_Reset}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tch\ =\ \mbox{\hyperlink{a00008_aef1c33bbabe502d02afa176c63b4e055}{ftouch}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tch\ ==\ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[4])}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a0d662362385098066d2c9bbbdc2231c6}{FiveTn\_Reset}}();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{a00002_aa115421bea9b4eeee80f9b2d45e96517}{IsAvailable}}(tch))\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a2b007319b61cae22e5a4e3b4756bb929}{swapButt}}(tch-\/1);\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a669a6c685069cba4e515c520e31422cf}{showFiveTnPole}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_aef9f8cf29f3391d07e3a08547b128186}{find\_avlbl\_touch}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d7/d46/a00002_aa3eca255b6be227d7d901cc2a72017a5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_a669a6c685069cba4e515c520e31422cf}\label{a00002_a669a6c685069cba4e515c520e31422cf} 
+\index{fiveteen.c@{fiveteen.c}!showFiveTnPole@{showFiveTnPole}}
+\index{showFiveTnPole@{showFiveTnPole}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{showFiveTnPole()}{showFiveTnPole()}}
+{\footnotesize\ttfamily void show\+Five\+Tn\+Pole (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+отрисовка игры ~\newline
+ 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00048}{48}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ r\ =\ 0;\ r\ <\ 16;\ r++)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ t\ =\ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[r]\ -\/\ 1;\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00002_a47f165bb804329afae36c43efc0414d9}{fpicture\_x}}[t]();}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d7/d46/a00002_a669a6c685069cba4e515c520e31422cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{a00002_a2b007319b61cae22e5a4e3b4756bb929}\label{a00002_a2b007319b61cae22e5a4e3b4756bb929} 
+\index{fiveteen.c@{fiveteen.c}!swapButt@{swapButt}}
+\index{swapButt@{swapButt}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{swapButt()}{swapButt()}}
+{\footnotesize\ttfamily void swap\+Butt (\begin{DoxyParamCaption}\item[{int}]{tch }\end{DoxyParamCaption})}
+
+
+
+передвижение фишек 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00121}{121}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ posSpce\ =\ \mbox{\hyperlink{a00002_a09c77a2baa9076534a712583408a4e9e}{avlbl\_touch}}[4];}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ bckUp\ =\ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[tch];}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[tch]\ =\ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[posSpce\ -\/\ 1];}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{a00002_a192dd8b74b232dd33d1c85cc4b80381b}{u}}.\mbox{\hyperlink{a00014_aa9c0214190cd0bcbb8224c3ca7089c73}{Buttons}}[posSpce\ -\/\ 1]\ =\ bckUp;}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{d7/d46/a00002_a2b007319b61cae22e5a4e3b4756bb929_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Переменные}
+\Hypertarget{a00002_a09c77a2baa9076534a712583408a4e9e}\label{a00002_a09c77a2baa9076534a712583408a4e9e} 
+\index{fiveteen.c@{fiveteen.c}!avlbl\_touch@{avlbl\_touch}}
+\index{avlbl\_touch@{avlbl\_touch}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{avlbl\_touch}{avlbl\_touch}}
+{\footnotesize\ttfamily int avlbl\+\_\+touch\mbox{[}5\mbox{]} = \{ 0 \}}
+
+
+
+массив доступных для перемещения фишек 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00021}{21}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ 0\ \};}
+
+\end{DoxyCode}
+\Hypertarget{a00002_a47f165bb804329afae36c43efc0414d9}\label{a00002_a47f165bb804329afae36c43efc0414d9} 
+\index{fiveteen.c@{fiveteen.c}!fpicture\_x@{fpicture\_x}}
+\index{fpicture\_x@{fpicture\_x}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{fpicture\_x}{fpicture\_x}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00002_a84fa175f487812e47cfabd01a144e09f}{f\+\_\+pic}} fpicture\+\_\+x\mbox{[}16\mbox{]}}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_addf7f86cd1c404b66a575247e789b76d}{fpicture\_1}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a3e72ce339ca2052d2d4bab9092494b05}{fpicture\_2}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a7076e7745854c8c983f18bfc1f68251f}{fpicture\_3}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a3365cb9c5ae5ff245231ffabf0e87859}{fpicture\_4}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a2e3d592de22e1c0c942f969c1749bf27}{fpicture\_5}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_afe74f8b383b2973d5a34e0aae300675f}{fpicture\_6}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_ab7ac828122cf0c0967afd8cb66239652}{fpicture\_7}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_ab00dbaa066191d9cccba120fbe8c013e}{fpicture\_8}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a5aad4620e913a8486906a8b82aecffc7}{fpicture\_9}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a052ea5a91765ed9b98e0061b63dd8460}{fpicture\_10}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a43531cb97e21839d6abb615239317012}{fpicture\_11}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_ad071f901a4e41c18ba9922ba39d126cf}{fpicture\_12}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_adb40c8f26fad3520c08e9c3487d6808a}{fpicture\_13}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_abe13dfe7f0f4d0198b02e1abd2028ca6}{fpicture\_14}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_a68b2fed694be88ec9981783791b530d0}{fpicture\_15}},}
+\DoxyCodeLine{\mbox{\hyperlink{a00008_ab1418ef701abf138cdb5365330dee864}{fpicture\_spase}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+массив функций вывода 
+
+
+
+См. определение в файле \mbox{\hyperlink{a00002_source}{fiveteen.\+c}} строка \mbox{\hyperlink{a00002_source_l00026}{26}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \mbox{\hyperlink{a00008_addf7f86cd1c404b66a575247e789b76d}{fpicture\_1}},}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{a00008_a3e72ce339ca2052d2d4bab9092494b05}{fpicture\_2}},}
+\DoxyCodeLine{00030\ \mbox{\hyperlink{a00008_a7076e7745854c8c983f18bfc1f68251f}{fpicture\_3}},}
+\DoxyCodeLine{00031\ \mbox{\hyperlink{a00008_a3365cb9c5ae5ff245231ffabf0e87859}{fpicture\_4}},}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{a00008_a2e3d592de22e1c0c942f969c1749bf27}{fpicture\_5}},}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{a00008_afe74f8b383b2973d5a34e0aae300675f}{fpicture\_6}},}
+\DoxyCodeLine{00034\ \mbox{\hyperlink{a00008_ab7ac828122cf0c0967afd8cb66239652}{fpicture\_7}},}
+\DoxyCodeLine{00035\ \mbox{\hyperlink{a00008_ab00dbaa066191d9cccba120fbe8c013e}{fpicture\_8}},}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{a00008_a5aad4620e913a8486906a8b82aecffc7}{fpicture\_9}},}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{a00008_a052ea5a91765ed9b98e0061b63dd8460}{fpicture\_10}},}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{a00008_a43531cb97e21839d6abb615239317012}{fpicture\_11}},}
+\DoxyCodeLine{00039\ \mbox{\hyperlink{a00008_ad071f901a4e41c18ba9922ba39d126cf}{fpicture\_12}},}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{a00008_adb40c8f26fad3520c08e9c3487d6808a}{fpicture\_13}},}
+\DoxyCodeLine{00041\ \mbox{\hyperlink{a00008_abe13dfe7f0f4d0198b02e1abd2028ca6}{fpicture\_14}},}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{a00008_a68b2fed694be88ec9981783791b530d0}{fpicture\_15}},}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{a00008_ab1418ef701abf138cdb5365330dee864}{fpicture\_spase}}}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}
+\Hypertarget{a00002_a192dd8b74b232dd33d1c85cc4b80381b}\label{a00002_a192dd8b74b232dd33d1c85cc4b80381b} 
+\index{fiveteen.c@{fiveteen.c}!u@{u}}
+\index{u@{u}!fiveteen.c@{fiveteen.c}}
+\doxysubsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily union \mbox{\hyperlink{a00014}{matrix}} u}
+
